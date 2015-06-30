@@ -1,0 +1,74 @@
+<h2>Edit observation</h2>
+
+
+<div class="row show-grid">
+
+    <div class="col-xs-12">
+        <label for="observation_name">Name</label>
+        <input id="observation_name" class="form-control" ng-model="observation.name" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_amount">Amount</label>
+        <input id="observation_amount" class="form-control" ng-model="observation.amount" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_sex">Sex</label>
+        <input id="observation_sex" class="form-control" ng-model="observation.sex" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_age">Age</label>
+        <input id="observation_age" class="form-control" ng-model="observation.age" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_activity">Activity</label>
+        <input id="observation_activity" class="form-control" ng-model="observation.activity" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_date">Date</label>
+        <input id="observation_date" class="form-control" ng-model="observation.date" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_time">Time</label>
+        <input id="observation_time" class="form-control" ng-model="observation.time" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_unsure">Unsure observation</label>
+        <input id="observation_unsure" type="checkbox" ng-model="observation.unsure" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<!--
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_locale">Locale</label>
+        <input id="observation_locale" class="form-control" ng-model="observation.locale" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+-->
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_comment">Comment</label>
+        <input id="observation_comment" class="form-control" ng-model="observation.comment" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        <label for="observation_public">Public</label>
+        <input id="observation_public" class="form-control" type="checkbox" ng-model="observation.public" ng-disabled="observation.owner != $root.currentUser._id">
+    </div>
+</div>
+
+

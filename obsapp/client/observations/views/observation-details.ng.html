@@ -1,0 +1,69 @@
+<h2>Observation details</h2>
+
+
+<div class="row show-grid">
+
+    <div class="col-xs-12">
+        Name: {{observation.name}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Amount: {{observation.amount}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Sex: {{observation.sex}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Age: {{observation.age}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Activity: {{observation.activity}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Date: {{observation.date}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Time: {{observation.time}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Unsure observation: {{observation.unsure}}
+    </div>
+</div>
+<!--
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Locale: {{observation.locale}}
+    </div>
+</div>
+-->
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Comment: {{observation.comment}}
+    </div>
+</div>
+<div class="row show-grid">
+    <div class="col-xs-12">
+        Public: {{observation.public}}
+    </div>
+</div>
+
+<div class="row show-grid" ng-show="observation.owner == $root.currentUser._id">
+    <div class="col-xs-12">
+        <button class="btn" ng-click="edit()">EDIT</button>
+    </div>
+</div>
+
+

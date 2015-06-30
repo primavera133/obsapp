@@ -1,0 +1,28 @@
+<head>
+    <title>Obsapp 0.1.2</title>
+    <base href="/">
+</head>
+<body>
+
+<div>
+    <header class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1>
+                    <a href="/observations">Home</a>
+                </h1>
+            </div>
+            <meteor-include src="loginButtons"></meteor-include>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>

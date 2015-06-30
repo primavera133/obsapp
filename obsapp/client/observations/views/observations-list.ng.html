@@ -1,0 +1,35 @@
+<h1>Observations:</h1>
+<div>
+    <input type="search" ng-model="search" placeholder="Search">
+    <select ng-model="orderProperty">
+        <option value="1">Ascending</option>
+        <option value="-1">Descending</option>
+    </select>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>Observation</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Posted by</th>
+            <th></th>
+        </tr>
+        <tr dir-paginate="observation in observations | itemsPerPage: perPage" total-items="observationsCount.count">
+            <td><a href="/observation/{{observation._id}}">{{observation.name}}</a></td>
+            <td>{{observation.date}}</td>
+            <td>{{observation.time}}</td>
+            <td>{{creator(observation) | displayName }}</td>
+            <td>
+                <button class="btn btn-default btn-sm" ng-click="remove(observation)"
+                        ng-show="$root.currentUser && $root.currentUser._id == observation.owner">Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+
+<button ng-click="add()">Add observation</button>
