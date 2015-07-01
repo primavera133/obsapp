@@ -16,7 +16,7 @@ angular.module('am.resetField', []).directive('amResetField', ['$compile', '$tim
             }
 
             // compiled reset icon template
-            var template = $compile('<i ng-show="enabled" ng-mousedown="reset()" class="fa fa-times-circle"></i>')(scope);
+            var template = $compile('<i ng-show="enabled" ng-mousedown="reset()" class="fui-cross-circle"></i>')(scope);
             el.after(template);
 
             scope.reset = function() {

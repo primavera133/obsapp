@@ -17,5 +17,5 @@ accounts-github
 accounts-ui
 angularutils:pagination
 tmeasday:publish-counts
-fortawesome:fontawesome
+#fortawesome:fontawesome
 selchenkov:angular-bootstrap-ui

@@ -1,7 +1,7 @@
 /* http://softwareninjaneer.com/blog/creating-an-angularjs-reset-field-directive/ */
 /* prevent text from appearing underneath the icon */
 input[am-reset-field] {
-    padding-right: 19px;
+    padding-right: 35px;
 }
 
 /* hide the built-in IE10+ clear field icon */
@@ -14,10 +14,10 @@ input[am-reset-field]::-webkit-search-cancel-button {
 }
 
 /* icon styles */
-input[am-reset-field] + .fa {
+input[am-reset-field] + .fui-cross-circle {
     position: absolute;
-    right: 23px;
-    bottom: 10px;
+    right: 25px;
+    bottom: 7px;
     color: #C0C0C0;
     cursor: default;
 }
