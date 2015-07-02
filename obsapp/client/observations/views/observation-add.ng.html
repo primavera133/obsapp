@@ -82,27 +82,30 @@
                 </div>
 
                 <div class="col-xs-12 form-group">
+                    <label>Unsure observation</label>
+                    <toggle-switch ng-model="newObservation.unsure"></toggle-switch>
+
+
+<!--
+
                     <label for="newObservation_unsure">
                         <input id="newObservation_unsure" type="checkbox" ng-model="newObservation.unsure">
                         Unsure observation
                     </label>
+-->
                 </div>
 
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_comment">Comment</label>
-                    <input type="text" id="newObservation_comment" class="form-control"
+                    <textarea id="newObservation_comment" class="form-control"
                            ng-model="newObservation.comment"
-                           am-reset-field/>
+                           ></textarea>
                 </div>
 
                 <div class="col-xs-12 form-group">
-                    <div class="checkbox">
-                        <label for="newObservation_public">
-                            <input id="newObservation_public" type="checkbox"
-                                   ng-model="newObservation.public">
-                            Public
-                        </label>
-                    </div>
+                    <label>Public observation</label>
+                    <toggle-switch ng-model="newObservation.public"></toggle-switch>
+
                 </div>
             </div>
 
