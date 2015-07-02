@@ -1,28 +1,31 @@
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Obsapp 0.1.2</title>
     <base href="/">
 </head>
 <body>
+    <div class="container_">
 
-<div>
-    <header class="navbar navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-lg " role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/observations">Obsapp</a>
+                    <div class="angular-meteor-loginbuttons">
+                        <meteor-include src="loginButtons"></meteor-include>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <div class="container-fluid">
-            <div class="navbar-header">
-                <h1>
-                    <a href="/observations">Home</a>
-                </h1>
-            </div>
-            <meteor-include src="loginButtons"></meteor-include>
-        </div>
-    </header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <div ui-view></div>
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div ui-view></div>
+                </div>
             </div>
         </div>
+
     </div>
-</div>
-
-
 </body>

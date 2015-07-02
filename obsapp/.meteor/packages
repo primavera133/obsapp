@@ -14,8 +14,7 @@ accounts-facebook
 accounts-twitter
 accounts-google
 accounts-github
-accounts-ui
 angularutils:pagination
 tmeasday:publish-counts
-#fortawesome:fontawesome
 selchenkov:angular-bootstrap-ui
+accounts-ui
