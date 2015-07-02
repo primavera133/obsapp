@@ -19,7 +19,6 @@
         <tr dir-paginate="observation in observations | itemsPerPage: perPage" total-items="observationsCount.count">
             <td><a href="/observation/{{observation._id}}">{{observation.name}}</a></td>
             <td>{{observation.date}}</td>
-            <td>{{observation.time}}</td>
             <td>{{creator(observation) | displayName }}</td>
             <td>
                 <button class="btn btn-default btn-sm" ng-click="remove(observation)"

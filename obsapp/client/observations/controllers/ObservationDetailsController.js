@@ -1,5 +1,5 @@
-angular.module('obsapp').controller('ObservationDetailsController', ['$scope', '$state', '$stateParams', '$meteor',
-    function($scope, $state, $stateParams, $meteor){
+angular.module('obsapp').controller('ObservationDetailsController', ['$scope', '$state', '$stateParams', '$meteor', 'dateService',
+    function ($scope, $state, $stateParams, $meteor, dateService) {
         'use strict';
 
         $scope.observations = $meteor.collection(function () {
@@ -7,19 +7,20 @@ angular.module('obsapp').controller('ObservationDetailsController', ['$scope', '
         });
 
         $scope.observation = $meteor.object(Obsapp.Observations, $stateParams.obsId);
+        $scope.dateService = dateService;
 
         var subscriptionHandle;
-        $meteor.subscribe('observations').then(function(handle) {
+        $meteor.subscribe('observations').then(function (handle) {
             subscriptionHandle = handle;
         });
 
         $scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
 
-        $scope.$on('$destroy', function() {
+        $scope.$on('$destroy', function () {
             subscriptionHandle.stop();
         });
 
-        $scope.edit = function(){
+        $scope.edit = function () {
             $state.go('observationEdit', {obsId: $scope.observation._id});
         };
 

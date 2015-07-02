@@ -1,62 +1,45 @@
-<h2>Observation details</h2>
-
-
 <div class="row show-grid">
 
     <div class="col-xs-12">
-        Name: {{observation.name}}
+        {{dateService.formatDate(observation.date_start)}} - {{dateService.formatDate(observation.date_end)}}
     </div>
-</div>
-<div class="row show-grid">
+
+    <div class="col-xs-12">
+        <h2>{{observation.name}}</h2>
+    </div>
+
+
     <div class="col-xs-12">
         Amount: {{observation.amount}}
     </div>
-</div>
-<div class="row show-grid">
+
     <div class="col-xs-12">
         Sex: {{observation.sex}}
     </div>
-</div>
-<div class="row show-grid">
+
     <div class="col-xs-12">
         Age: {{observation.age}}
     </div>
-</div>
-<div class="row show-grid">
+
     <div class="col-xs-12">
         Activity: {{observation.activity}}
     </div>
-</div>
-<div class="row show-grid">
+
     <div class="col-xs-12">
-        Date: {{observation.date}}
+
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
-        Time: {{observation.time}}
-    </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div ng-if="observation.unsure" class="col-xs-12">
         Unsure observation: {{observation.unsure}}
     </div>
-</div>
-<!--
-<div class="row show-grid">
-    <div class="col-xs-12">
-        Locale: {{observation.locale}}
-    </div>
-</div>
--->
-<div class="row show-grid">
+
     <div class="col-xs-12">
         Comment: {{observation.comment}}
     </div>
 </div>
 <div class="row show-grid">
     <div class="col-xs-12">
-        Public: {{observation.public}}
+        Public: <span yes-no="observation.public" ></span>
     </div>
 </div>
 

@@ -11,10 +11,9 @@ Meteor.startup(function () {
                 'sex': 'female',
                 'age': 'adult',
                 'activity': 'foraging for food',
-                'date': new Date(),
-                'time': '10:00',
+                'date_start': moment(10, 'HH').format(),
+                'date_end': moment(15, 'HH').format(),
                 'unsure': false,
-                'locale': 'loc-1',
                 'comment': 'Stor glad höna',
                 'public': true
             },
@@ -24,10 +23,9 @@ Meteor.startup(function () {
                 'sex': 'male',
                 'age': 'adult',
                 'activity': 'singing',
-                'date': new Date(),
-                'time': '10:00',
+                'date_start': moment(12, 'HH').format(),
+                'date_end': moment(15, 'HH').format(),
                 'unsure': false,
-                'locale': 'loc-1',
                 'comment': 'Stor glad höna',
                 'public': true
             }

@@ -5,6 +5,7 @@
         'angular-meteor',
         'ui.router',
         'angularUtils.directives.dirPagination',
+        'yes-no',
         'am.resetField',
         'toggle-switch'
     ]);
