@@ -18,3 +18,5 @@ angularutils:pagination
 tmeasday:publish-counts
 selchenkov:angular-bootstrap-ui
 accounts-ui
+tsega:bootstrap3-datetimepicker
+momentjs:moment

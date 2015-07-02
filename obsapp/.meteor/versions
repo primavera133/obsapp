@@ -45,6 +45,7 @@ meteor-platform@1.2.2
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
+momentjs:moment@2.8.4
 mongo@1.1.0
 mquandalle:bower@0.1.11
 mvrx:bluebird@0.0.1
@@ -73,6 +74,7 @@ stevezhu:lodash@1.0.2
 templating@1.1.1
 tmeasday:publish-counts@0.4.0
 tracker@1.0.7
+tsega:bootstrap3-datetimepicker@4.14.30_4
 twitter@1.1.4
 ui@1.0.6
 underscore@1.0.3

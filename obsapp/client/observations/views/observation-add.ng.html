@@ -11,16 +11,14 @@
                     <input type="text" id="newObservation_name" class="form-control" ng-model="newObservation.name"
                            am-reset-field/>
                 </div>
-            </div>
-            <div class="row show-grid">
-                <div class="col-xs-12 form-group">
+
+                <div class="col-xs-6 form-group">
                     <label for="newObservation_amount">Amount</label>
                     <input type="tel" id="newObservation_amount" class="form-control" ng-model="newObservation.amount"
                            am-reset-field/>
                 </div>
-            </div>
-            <div class="row show-grid">
-                <div class="col-xs-12 form-group">
+
+                <div class="col-xs-6 form-group">
                     <label for="newObservation_sex">Sex</label>
                     <select id="newObservation_sex" class="form-control"
                             ng-options="item.label as item.label for item in sexChoices track by item.id"
@@ -28,9 +26,8 @@
                     </select>
                     <!--<input id="newObservation_sex" class="form-control" ng-model="newObservation.sex">-->
                 </div>
-            </div>
-            <div class="row show-grid">
-                <div class="col-xs-12 form-group">
+
+                <div class="col-xs-6 form-group">
                     <label for="newObservation_age">Age</label>
                     <select id="newObservation_age" class="form-control"
                             ng-options="item.label as item.label for item in ageChoices track by item.id"
@@ -41,9 +38,8 @@
                                        am-reset-field>
                     -->
                 </div>
-            </div>
-            <div class="row show-grid">
-                <div class="col-xs-12 form-group">
+
+                <div class="col-xs-6 form-group">
                     <label for="newObservation_activity">Activity</label>
                     <select id="newObservation_activity" class="form-control"
                             ng-options="item.label as item.label for item in activityChoices track by item.id"
@@ -51,60 +47,54 @@
 
                     <!--<input id="newObservation_activity" class="form-control" ng-model="newObservation.activity">-->
                 </div>
-            </div>
-            <div class="row show-grid">
-                <div class="col-xs-12 form-group">
-                    <label for="newObservation_date">Date</label>
-                    <!--
-                                <input type="date" id="newObservation_date" class="form-control" ng-model="newObservation.date" >
-                    -->
 
-                    <p class="input-group">
-                        <input type="text" class="form-control"
-                               datepicker-popup
-                               ng-model="newObservation.date"
-                               is-open="opened"
-                               datepicker-options="dateOptions"
-                               ng-required="true" close-text="Close"/>
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i
-                        class="fui-calendar"></i></button>
-              </span>
-                    </p>
+                <div class="col-xs-12 form-group">
+                    <label for="newObservation_date_start">Start</label>
+                    <div class="input-group date" id="dateTimePickerAddStart">
+                        <input type="text"
+                               class="form-control"
+                               id="newObservation_date_start"
+                               ng-model="newObservation.date_start"
+                               ng-required="true"
+                        />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"><i
+                                class="fui-calendar"></i></button>
+                        </span>
+                    </div>
 
                 </div>
-            </div>
-            <div class="row show-grid">
                 <div class="col-xs-12 form-group">
-                    <label for="newObservation_time">Time</label>
-                    <input id="newObservation_time" class="form-control" ng-model="newObservation.time">
+                    <label for="newObservation_date_end">End</label>
+                    <div class="input-group date" id="dateTimePickerAddEnd">
+                        <input type="text"
+                               class="form-control"
+                               id="newObservation_date_end"
+                               ng-model="newObservation.date_end"
+                               ng-required="true"
+                        />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"><i
+                                class="fui-calendar"></i></button>
+                        </span>
+                    </div>
+
                 </div>
-            </div>
-            <div class="row show-grid">
+
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_unsure">
                         <input id="newObservation_unsure" type="checkbox" ng-model="newObservation.unsure">
                         Unsure observation
                     </label>
                 </div>
-            </div>
-            <!--
-                <div class="row show-grid">
-                    <div class="col-xs-12">
-                        <label for="newObservation_locale">Locale</label>
-                        <input id="newObservation_locale" class="form-control" ng-model="newObservation.locale" >
-                    </div>
-                </div>
-            -->
-            <div class="row show-grid">
+
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_comment">Comment</label>
                     <input type="text" id="newObservation_comment" class="form-control"
                            ng-model="newObservation.comment"
                            am-reset-field/>
                 </div>
-            </div>
-            <div class="row show-grid">
+
                 <div class="col-xs-12 form-group">
                     <div class="checkbox">
                         <label for="newObservation_public">

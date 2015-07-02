@@ -1,6 +1,7 @@
 //console.log('observationsListController.js');
 
-angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '$scope', '$meteor', '$state', 'observationAddChoicesService',
+angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '$scope', '$meteor', '$state',
+    'observationAddChoicesService',
     function ($rootScope, $scope, $meteor, $state, observationAddChoicesService) {
         'use strict';
 
@@ -23,39 +24,24 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
 
         $scope.activityChoices = observationAddChoicesService.activityChoices;
 
-/*
         $scope.newObservation = {
-            sex: $scope.sexChoices[0]
+            /*sex: $scope.sexChoices[0]*/
         };
-*/
 
 
-        /*
          ////// DATE
+        var $datePickers = $('#dateTimePickerAddStart, #dateTimePickerAddEnd');
 
-         $scope.openDatePicker = function($event){
-         $event.preventDefault();
-         $event.stopPropagation();
-
-         //TODO: rename opened
-         $scope.opened = true;
-         };
-
-         $scope.today = function() {
-         $scope.newObservation.date = new Date();
-         };
-         $scope.today();
-
-         $scope.clearDate = function () {
-         $scope.newObservaton.date = null;
-         };
-
-
-         $scope.dateOptions = {
-         formatYear: 'yy',
-         startingDay: 1
-         };
-         */
+        $datePickers.datetimepicker({
+            locale: 'sv',
+            showTodayButton: true,
+            showClear: false,
+            showClose: false,
+            icons:{
+                today: 'fui-radio-checked'
+            },
+            stepping: 15
+        });
 
     }])
 ;
