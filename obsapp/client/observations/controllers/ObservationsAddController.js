@@ -12,6 +12,10 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
             return Meteor.users.findOne(userId);
         };
 
+        $scope.observations = $meteor.collection(function () {
+            return Obsapp.Observations.find({});
+        });
+
         $scope.add = function (newObservation) {
             newObservation.owner = $rootScope.currentUser._id;
             $scope.observations.push(newObservation);
