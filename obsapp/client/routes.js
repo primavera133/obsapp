@@ -54,6 +54,6 @@ angular.module('obsapp').config(['$urlRouterProvider', '$stateProvider', '$locat
                     }]
                 }
             });
-        //$urlRouterProvider.otherwise('/observations');
+        $urlRouterProvider.otherwise('/observations');
     }]);
 

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var module = angular.module('yes-no', ['ng']);
+    var module = angular.module('yes-no', []);
 
     module.provider('yesNoConfig', [function() {
         this.yesLabel = 'Yes';
@@ -21,7 +21,7 @@
             restrict: 'EA',
             replace: true,
             scope: {
-                yesNo: '@',
+                yesNo: '=',
                 yesLabel: '@',
                 noLabel: '@'
             },

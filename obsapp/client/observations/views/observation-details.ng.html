@@ -1,7 +1,7 @@
 <div class="row show-grid">
 
     <div class="col-xs-12">
-        {{dateService.formatDate(observation.date_start)}} - {{dateService.formatDate(observation.date_end)}}
+        <span show-observation-date observation="observation"></span>
     </div>
 
     <div class="col-xs-12">
@@ -39,7 +39,7 @@
 </div>
 <div class="row show-grid">
     <div class="col-xs-12">
-        Public: <span yes-no="observation.public" ></span>
+        Public: <span yes-no="observation.public"></span>
     </div>
 </div>
 

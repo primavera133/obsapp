@@ -20,3 +20,7 @@ selchenkov:angular-bootstrap-ui
 accounts-ui
 tsega:bootstrap3-datetimepicker
 momentjs:moment
+sanjo:jasmine
+angular:angular-mocks
+#velocity:html-reporter
+velocity:console-reporter

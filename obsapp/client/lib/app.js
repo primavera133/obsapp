@@ -1,13 +1,17 @@
 (function () {
     'use strict';
 
+    angular.module('datesModule', ['angularMoment']);
+
     angular.module('obsapp', [
         'angular-meteor',
         'ui.router',
         'angularUtils.directives.dirPagination',
-        'yes-no',
         'am.resetField',
-        'toggle-switch'
+        'toggle-switch',
+        'angularMoment',
+        'datesModule',
+        'yes-no'
     ]);
 
     function onReady() {
