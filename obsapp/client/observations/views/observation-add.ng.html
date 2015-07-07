@@ -13,6 +13,7 @@
                            name="name"
                            class="form-control"
                            ng-model="newObservation.name"
+                           required
                            am-reset-field/>
                 </div>
 
@@ -64,6 +65,7 @@
                                name="date_start"
                                id="newObservation_date_start"
                                ng-model="newObservation.date_start"
+                               required
                                 />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i
@@ -81,7 +83,7 @@
                                name="date_end"
                                id="newObservation_date_end"
                                ng-model="newObservation.date_end"
-                               ng-required="true"
+                               required
                                 />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i

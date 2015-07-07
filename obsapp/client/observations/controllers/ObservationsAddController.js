@@ -17,6 +17,10 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
         });
 
         $scope.add = function (newObservation) {
+            if(!$scope.addObservationForm.$valid){
+                return;
+            }
+
             newObservation.owner = $rootScope.currentUser._id;
             $scope.observations.push(newObservation);
             $state.go('observations');
