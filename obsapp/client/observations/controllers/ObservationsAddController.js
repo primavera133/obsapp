@@ -47,5 +47,13 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
             stepping: 15
         });
 
+        $datePickers.on('dp.change', function(e){
+            var name = $(e.target).find('input').attr('name'),
+                value = $(e.target).find('input').val();
+            //no 2-way binding for jQuery hackz, do it manually
+            $scope.newObservation[name] = value;
+        });
+
+
     }])
 ;

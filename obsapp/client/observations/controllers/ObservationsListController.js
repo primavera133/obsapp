@@ -9,9 +9,19 @@ angular.module('obsapp').controller('ObservationsListController', ['$rootScope',
         $scope.sort = {name: 1};
         $scope.orderProperty = '1';
 
+/*
         $scope.observations = $meteor.collection(function () {
             return Obsapp.Observations.find({}, {
                 sort: $scope.getReactively('sort')
+            });
+        });
+*/
+
+        $scope.observations = $meteor.collection(function () {
+            return Obsapp.Observations.find({}, {
+                sort: {
+                    date_start: 1
+                }
             });
         });
 

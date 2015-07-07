@@ -2,80 +2,90 @@
 
 <div class="row" ng-show="$root.currentUser">
     <div class="col-xs-12 col-md-8">
-        <form class="form">
+        <form class="form" name="addObservationForm">
 
             <div class="row show-grid">
 
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_name">Name</label>
-                    <input type="text" id="newObservation_name" class="form-control" ng-model="newObservation.name"
+                    <input type="text"
+                           id="newObservation_name"
+                           name="name"
+                           class="form-control"
+                           ng-model="newObservation.name"
                            am-reset-field/>
                 </div>
 
                 <div class="col-xs-6 form-group">
                     <label for="newObservation_amount">Amount</label>
-                    <input type="tel" id="newObservation_amount" class="form-control" ng-model="newObservation.amount"
+                    <input type="tel"
+                           id="newObservation_amount"
+                           name="amount"
+                           class="form-control"
+                           ng-model="newObservation.amount"
                            am-reset-field/>
                 </div>
 
                 <div class="col-xs-6 form-group">
                     <label for="newObservation_sex">Sex</label>
-                    <select id="newObservation_sex" class="form-control"
+                    <select id="newObservation_sex"
+                            name="sex"
+                            class="form-control"
                             ng-options="item.label as item.label for item in sexChoices track by item.id"
                             ng-model="newObservation.sex">
                     </select>
-                    <!--<input id="newObservation_sex" class="form-control" ng-model="newObservation.sex">-->
                 </div>
 
                 <div class="col-xs-6 form-group">
                     <label for="newObservation_age">Age</label>
-                    <select id="newObservation_age" class="form-control"
+                    <select id="newObservation_age"
+                            name="age"
+                            class="form-control"
                             ng-options="item.label as item.label for item in ageChoices track by item.id"
                             ng-model="newObservation.age">
                     </select>
-                    <!--
-                                <input type="tel" id="newObservation_age" class="form-control" ng-model="newObservation.age"
-                                       am-reset-field>
-                    -->
                 </div>
 
                 <div class="col-xs-6 form-group">
                     <label for="newObservation_activity">Activity</label>
-                    <select id="newObservation_activity" class="form-control"
+                    <select id="newObservation_activity"
+                            name="activity"
+                            class="form-control"
                             ng-options="item.label as item.label for item in activityChoices track by item.id"
                             ng-model="newObservation.activity"></select>
-
-                    <!--<input id="newObservation_activity" class="form-control" ng-model="newObservation.activity">-->
                 </div>
 
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_date_start">Start</label>
+
                     <div class="input-group date" id="dateTimePickerAddStart">
                         <input type="text"
                                class="form-control"
+                               name="date_start"
                                id="newObservation_date_start"
                                ng-model="newObservation.date_start"
-                               ng-required="true"
-                        />
+                                />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i
-                                class="fui-calendar"></i></button>
+                                    class="fui-calendar"></i></button>
                         </span>
                     </div>
 
                 </div>
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_date_end">End</label>
+
                     <div class="input-group date" id="dateTimePickerAddEnd">
                         <input type="text"
                                class="form-control"
+                               name="date_end"
                                id="newObservation_date_end"
                                ng-model="newObservation.date_end"
                                ng-required="true"
-                        />
+                                />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i
-                                class="fui-calendar"></i></button>
+                                    class="fui-calendar"></i></button>
                         </span>
                     </div>
 
@@ -84,22 +94,15 @@
                 <div class="col-xs-12 form-group">
                     <label>Unsure observation</label>
                     <toggle-switch ng-model="newObservation.unsure"></toggle-switch>
-
-
-<!--
-
-                    <label for="newObservation_unsure">
-                        <input id="newObservation_unsure" type="checkbox" ng-model="newObservation.unsure">
-                        Unsure observation
-                    </label>
--->
                 </div>
 
                 <div class="col-xs-12 form-group">
                     <label for="newObservation_comment">Comment</label>
-                    <textarea id="newObservation_comment" class="form-control"
-                           ng-model="newObservation.comment"
-                           ></textarea>
+                    <textarea id="newObservation_comment"
+                              name="comment"
+                              class="form-control"
+                              ng-model="newObservation.comment"
+                            ></textarea>
                 </div>
 
                 <div class="col-xs-12 form-group">
