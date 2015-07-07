@@ -3,71 +3,123 @@
 
 <div class="row show-grid">
 
-    <div class="col-xs-12">
+    <div class="col-xs-12 form-group">
         <label for="observation_name">Name</label>
-        <input id="observation_name" class="form-control" ng-model="observation.name" ng-disabled="observation.owner != $root.currentUser._id">
+        <input type="text"
+               id="observation_name"
+               name="name"
+               class="form-control"
+               ng-model="observation.name"
+               required
+               ng-disabled="observation.owner != $root.currentUser._id"
+               am-reset-field/>
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-6 form-group">
         <label for="observation_amount">Amount</label>
-        <input id="observation_amount" class="form-control" ng-model="observation.amount" ng-disabled="observation.owner != $root.currentUser._id">
+        <input type="tel"
+               id="observation_amount"
+               name="amount"
+               class="form-control"
+               ng-model="observation.amount"
+               ng-disabled="observation.owner != $root.currentUser._id">
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-6 form-group">
         <label for="observation_sex">Sex</label>
-        <input id="observation_sex" class="form-control" ng-model="observation.sex" ng-disabled="observation.owner != $root.currentUser._id">
+        <select id="observation_sex"
+                name="sex"
+                class="form-control"
+                ng-options="item.label as item.label for item in sexChoices"
+                ng-model="observation.sex"
+                ng-disabled="observation.owner != $root.currentUser._id">
+        </select>
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-6 form-group">
         <label for="observation_age">Age</label>
-        <input id="observation_age" class="form-control" ng-model="observation.age" ng-disabled="observation.owner != $root.currentUser._id">
+        <select id="observation_age"
+                name="age"
+                class="form-control"
+                ng-options="item.label as item.label for item in ageChoices"
+                ng-model="observation.age"
+                ng-disabled="observation.owner != $root.currentUser._id">
+        </select>
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-6 form-group">
         <label for="observation_activity">Activity</label>
-        <input id="observation_activity" class="form-control" ng-model="observation.activity" ng-disabled="observation.owner != $root.currentUser._id">
+        <select id="observation_activity"
+                name="activity"
+                class="form-control"
+                ng-options="item.label as item.label for item in activityChoices"
+                ng-model="observation.activity"
+                ng-disabled="observation.owner != $root.currentUser._id">
+        </select>
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
-        <label for="observation_date">Date</label>
-        <input id="observation_date" class="form-control" ng-model="observation.date" ng-disabled="observation.owner != $root.currentUser._id">
+
+    <div class="col-xs-12 form-group">
+        <label for="observation_date_start">Start</label>
+
+        <div class="input-group date" id="dateTimePickerAddStart">
+            <input type="text"
+                   class="form-control"
+                   name="date_start"
+                   id="observation_date_start"
+                   ng-model="observation.date_start"
+                   required
+                   ng-disabled="observation.owner != $root.currentUser._id"
+                    />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default"><i class="fui-calendar"></i></button>
+                </span>
+        </div>
+        <!--
+                <input id="observation_date" class="form-control" ng-model="observation.date_start"
+                       ng-disabled="observation.owner != $root.currentUser._id">
+        -->
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
-        <label for="observation_time">Time</label>
-        <input id="observation_time" class="form-control" ng-model="observation.time" ng-disabled="observation.owner != $root.currentUser._id">
+
+    <div class="col-xs-12 form-group">
+        <label for="observation_date_end">End</label>
+
+        <div class="input-group date" id="dateTimePickerAddEnd">
+            <input type="text"
+                   class="form-control"
+                   name="date_end"
+                   id="observation_date_end"
+                   ng-model="observation.date_end"
+                   required
+                   ng-disabled="observation.owner != $root.currentUser._id"
+                    />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default"><i class="fui-calendar"></i></button>
+                </span>
+        </div>
+        <!--
+                <input id="observation_time" class="form-control" ng-model="observation.date_end"
+                       ng-disabled="observation.owner != $root.currentUser._id">
+        -->
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-12 form-group">
         <label for="observation_unsure">Unsure observation</label>
-        <input id="observation_unsure" type="checkbox" ng-model="observation.unsure" ng-disabled="observation.owner != $root.currentUser._id">
+        <toggle-switch ng-model="observation.unsure" ng-disabled="observation.owner != $root.currentUser._id" ></toggle-switch>
     </div>
-</div>
-<!--
-<div class="row show-grid">
-    <div class="col-xs-12">
-        <label for="observation_locale">Locale</label>
-        <input id="observation_locale" class="form-control" ng-model="observation.locale" ng-disabled="observation.owner != $root.currentUser._id">
-    </div>
-</div>
--->
-<div class="row show-grid">
-    <div class="col-xs-12">
+
+    <div class="col-xs-12 form-group">
         <label for="observation_comment">Comment</label>
-        <input id="observation_comment" class="form-control" ng-model="observation.comment" ng-disabled="observation.owner != $root.currentUser._id">
+        <textarea id="observation_comment"
+              name="comment"
+              class="form-control"
+              ng-model="observation.comment"
+              ng-disabled="observation.owner != $root.currentUser._id"
+            ></textarea>
     </div>
-</div>
-<div class="row show-grid">
-    <div class="col-xs-12">
-        <label for="observation_public">Public</label>
-        <input id="observation_public" class="form-control" type="checkbox" ng-model="observation.public" ng-disabled="observation.owner != $root.currentUser._id">
+
+    <div class="col-xs-12 form-group">
+        <label for="observation_public">Public observation</label>
+        <toggle-switch ng-model="observation.public" ng-disabled="observation.owner != $root.currentUser._id"></toggle-switch>
     </div>
 </div>
 

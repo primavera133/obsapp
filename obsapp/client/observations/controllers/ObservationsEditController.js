@@ -1,5 +1,5 @@
-angular.module('obsapp').controller('ObservationEditController', ['$scope', '$stateParams', '$meteor',
-    function($scope, $stateParams, $meteor){
+angular.module('obsapp').controller('ObservationEditController', ['$scope', '$stateParams', '$meteor', 'observationAddChoicesService',
+    function($scope, $stateParams, $meteor, observationAddChoicesService){
         'use strict';
 
         $scope.observations = $meteor.collection(function () {
@@ -7,6 +7,11 @@ angular.module('obsapp').controller('ObservationEditController', ['$scope', '$st
         });
 
         $scope.observation = $meteor.object(Obsapp.Observations, $stateParams.obsId);
+
+        $scope.sexChoices = observationAddChoicesService.sexChoices;
+        $scope.ageChoices = observationAddChoicesService.ageChoices;
+        $scope.activityChoices = observationAddChoicesService.activityChoices;
+
 
         var subscriptionHandle;
         $meteor.subscribe('observations').then(function(handle) {
@@ -17,6 +22,27 @@ angular.module('obsapp').controller('ObservationEditController', ['$scope', '$st
 
         $scope.$on('$destroy', function() {
             subscriptionHandle.stop();
+        });
+
+        ////// DATE
+        var $datePickers = $('#dateTimePickerAddStart, #dateTimePickerAddEnd');
+
+        $datePickers.datetimepicker({
+            locale: 'sv',
+            showTodayButton: true,
+            showClear: false,
+            showClose: false,
+            icons:{
+                today: 'fui-radio-checked'
+            },
+            stepping: 15
+        });
+
+        $datePickers.on('dp.change', function(e){
+            var name = $(e.target).find('input').attr('name'),
+                value = $(e.target).find('input').val();
+            //no 2-way binding for jQuery hackz, do it manually
+            $scope.observation[name] = value;
         });
 
     }]);

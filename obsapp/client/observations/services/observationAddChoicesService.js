@@ -4,17 +4,13 @@ angular.module('obsapp').factory('observationAddChoicesService', [function () {
     var ObservationAddChoicesService = {};
 
     ObservationAddChoicesService.sexChoices = [{
-        label: 'male',
-        id: 'male'
+        label: 'male'
     }, {
-        label: 'female',
-        id: 'female'
+        label: 'female'
     }, {
-        label: 'female coloured',
-        id: 'female_coloured'
+        label: 'female coloured'
     }, {
-        label: 'in pair',
-        id: 'in_pair'
+        label: 'in pair'
     }];
 
     ObservationAddChoicesService.ageChoices = [{label: 'egg', id: 'egg'},
