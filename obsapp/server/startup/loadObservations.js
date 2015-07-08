@@ -28,6 +28,26 @@ Meteor.startup(function () {
                 'unsure': false,
                 'comment': 'Stor glad höna',
                 'public': true
+            },
+            {
+                'name': 'Kråka',
+                'amount' : 1,
+                'sex': 'female',
+                'age': 'adult',
+                'date_start': '2015-07-06 10:00',
+                'date_end': '2015-07-06 10:00',
+                'unsure': false,
+                'public': true
+            },
+            {
+                'name': 'Kaja',
+                'amount' : 1,
+                'sex': 'male',
+                'age': 'adult',
+                'date_start': '2015-07-06 10:00',
+                'date_end': '2015-07-06 10:00',
+                'unsure': false,
+                'public': true
             }
         ];
 

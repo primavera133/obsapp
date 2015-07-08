@@ -91,6 +91,22 @@ describe('showDateDirective', function () {
         expect(ctx.element.find('span:last').html()).toBe('12:00');
     });
 
+    it('should display date in short form', function () {
+        var template = '<span show-observation-date observation="observation" short-date="true"></span>';
+        var ctx = testContext({
+            observation: {
+                date_start: '2015-07-02T10:00:00+02:00',
+                date_end: '2015-07-03T12:00:00+02:00'
+            }, template: template
+        });
+
+        expect(ctx.element.find('span:first').html()).toBe('2/7');
+        expect(ctx.element.find('span:nth-child(2)').html()).toBe('10:00');
+        expect(ctx.element.find('span:nth-child(3)').html()).toBe(' - ');
+        expect(ctx.element.find('span:nth-child(4)').html()).toBe('3/7');
+        expect(ctx.element.find('span:last').html()).toBe('12:00');
+    });
+
 
 
     function testContext(options) {

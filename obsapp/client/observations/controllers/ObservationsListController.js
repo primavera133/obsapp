@@ -6,22 +6,12 @@ angular.module('obsapp').controller('ObservationsListController', ['$rootScope',
 
         $scope.page = 1;
         $scope.perPage = 10;
-        $scope.sort = {name: 1};
-        $scope.orderProperty = '1';
+        $scope.sort = {date_start: 1};
+        var orderProperty = '1';
 
-/*
         $scope.observations = $meteor.collection(function () {
             return Obsapp.Observations.find({}, {
                 sort: $scope.getReactively('sort')
-            });
-        });
-*/
-
-        $scope.observations = $meteor.collection(function () {
-            return Obsapp.Observations.find({}, {
-                sort: {
-                    date_start: 1
-                }
             });
         });
 
@@ -44,14 +34,11 @@ angular.module('obsapp').controller('ObservationsListController', ['$rootScope',
 
         });
 
-        $scope.$watch('orderProperty', function () {
-            if ($scope.orderProperty)
-                $scope.sort = {name: parseInt($scope.orderProperty)};
-        });
-
+/*
         $scope.remove = function (observation) {
             $scope.observations.remove(observation);
         };
+*/
 
         $scope.removeAll = function () {
             $scope.observations.remove();
@@ -91,5 +78,11 @@ angular.module('obsapp').controller('ObservationsListController', ['$rootScope',
             $state.go('observationAdd');
         };
 
+        $scope.reverseOrder = function(){
+            orderProperty = orderProperty === '1' ? '-1' : '1';
+
+            $scope.sort = {date_start: parseInt(orderProperty)};
+
+        };
 
     }]);

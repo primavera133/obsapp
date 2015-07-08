@@ -24,4 +24,9 @@ angular.module('obsapp').controller('ObservationDetailsController', ['$scope', '
             $state.go('observationEdit', {obsId: $scope.observation._id});
         };
 
+        $scope.remove = function (observation) {
+            $scope.observations.remove(observation);
+        };
+
+
     }]);

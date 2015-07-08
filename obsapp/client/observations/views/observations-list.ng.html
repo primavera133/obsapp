@@ -1,35 +1,47 @@
+<button class="btn btn-primary btn-md pull-right" ng-click="add()">Add observation</button>
 <h1>Observations</h1>
+
+<!--
 <div>
     <input type="search" ng-model="search" placeholder="Search">
-    <select ng-model="orderProperty">
-        <option value="1">Ascending</option>
-        <option value="-1">Descending</option>
-    </select>
 </div>
+-->
 
 <div class="table-responsive">
     <table class="table table-striped table-condensed">
         <tr>
+            <th class="visible-xs" ng-click="reverseOrder()">Date</th>
             <th>Observation</th>
-            <th>Time</th>
-            <th>Posted by</th>
-            <th></th>
+            <th class="hidden-xs" ng-click="reverseOrder()">Date</th>
+            <th class="hidden-xs">Time</th>
+            <th class="hidden-xs">Posted by</th>
         </tr>
         <tr dir-paginate="observation in observations | itemsPerPage: perPage" total-items="observationsCount.count">
+            <td class="visible-xs">
+                <small>
+                    <span show-observation-date observation="observation" short-date="true"></span>
+                </small>
+            </td>
             <td><a href="/observation/{{observation._id}}">{{observation.name}}</a></td>
-            <td>
+            <td class="hidden-xs">
+                <span show-observation-date observation="observation" show-only-date="true"></span>
+            </td>
+            <td class="hidden-xs">
                 <span show-observation-date observation="observation" show-only-time="true"></span>
             </td>
-            <td>{{creator(observation) | displayName }}</td>
+            <td class="hidden-xs">
+                {{creator(observation) | displayName }}
+            </td>
+<!--
             <td>
                 <button class="btn btn-default btn-xs" ng-click="remove(observation)"
                         ng-show="$root.currentUser && $root.currentUser._id == observation.owner">Delete
                 </button>
             </td>
+-->
         </tr>
     </table>
 </div>
 
 <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 
-<button class="btn btn-primary btn-hg" ng-click="add()">Add observation</button>

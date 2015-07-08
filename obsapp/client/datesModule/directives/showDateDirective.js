@@ -9,7 +9,8 @@
             scope: {
                 observation: '=',
                 showOnlyTime: '@',
-                showOnlyDate: '@'
+                showOnlyDate: '@',
+                shortDate: '@'
             },
             template: '<span>' +
             '<span ng-if="showDate" ng-bind="startDate"></span> ' +
@@ -25,9 +26,9 @@
                     return;
                 }
 
-                scope.startDate = moment(scope.observation.date_start).format('YYYY-MM-DD');
+                scope.startDate = scope.shortDate ? moment(scope.observation.date_start).format('D/M') : moment(scope.observation.date_start).format('YYYY-MM-DD');
                 scope.startTime = moment(scope.observation.date_start).format('HH:mm');
-                scope.endDate = moment(scope.observation.date_end).format('YYYY-MM-DD');
+                scope.endDate = scope.shortDate ? moment(scope.observation.date_end).format('D/M') : moment(scope.observation.date_end).format('YYYY-MM-DD');
                 scope.endTime = moment(scope.observation.date_end).format('HH:mm');
 
                 scope.showDate = (!scope.showOnlyTime);
