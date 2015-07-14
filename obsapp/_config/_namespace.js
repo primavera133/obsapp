@@ -1,5 +1,3 @@
-//console.log('_namespace.js');
-
 Obsapp = {
     Observations: {}
 };

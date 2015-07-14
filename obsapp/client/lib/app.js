@@ -10,6 +10,7 @@
         'am.resetField',
         'toggle-switch',
         'angularMoment',
+        'siyfion.sfTypeahead',
         'datesModule',
         'yes-no'
     ]);

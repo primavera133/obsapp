@@ -4,7 +4,6 @@ angular.module('am.resetField', []).directive('amResetField', ['$compile', '$tim
     'use strict';
     return {
         require: 'ngModel',
-        scope: {},
         link: function(scope, el, attrs, ctrl) {
             // limit to input element of specific types
             var inputTypes = /text|search|tel|url|email|password/i;

@@ -1,8 +1,8 @@
 //console.log('observationsListController.js');
 
 angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '$scope', '$meteor', '$state',
-    'observationAddChoicesService',
-    function ($rootScope, $scope, $meteor, $state, observationAddChoicesService) {
+    'observationAddChoicesService', 'observationSuggestService',
+    function ($rootScope, $scope, $meteor, $state, observationAddChoicesService, observationSuggestService) {
         'use strict';
 
 
@@ -15,6 +15,20 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
         $scope.observations = $meteor.collection(function () {
             return Obsapp.Observations.find({});
         });
+
+        var names = observationSuggestService.getNames();
+        names.initialize();
+
+        $scope.addNameOptions = {
+            highlight: true
+        };
+
+        // Single dataset example
+        $scope.addNameDataSet = {
+            displayKey: 'sv',
+            source: names.ttAdapter()
+        };
+
 
         $scope.add = function (newObservation) {
             if(!$scope.addObservationForm.$valid){
