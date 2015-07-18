@@ -31,6 +31,9 @@ angular.module('obsapp').config(['$urlRouterProvider', '$stateProvider', '$locat
                 resolve: {
                     'currentUser': ['$meteor', function($meteor){
                         return $meteor.requireUser();
+                    }],
+                    'names': ['$meteor', function($meteor){
+                        return $meteor.subscribe('names');
                     }]
                 }
             })

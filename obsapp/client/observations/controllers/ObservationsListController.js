@@ -1,5 +1,3 @@
-//console.log('observationsListController.js');
-
 angular.module('obsapp').controller('ObservationsListController', ['$rootScope', '$scope', '$meteor', '$state',
     function ($rootScope, $scope, $meteor, $state) {
         'use strict';
@@ -34,15 +32,6 @@ angular.module('obsapp').controller('ObservationsListController', ['$rootScope',
 
         });
 
-/*
-        $scope.remove = function (observation) {
-            $scope.observations.remove(observation);
-        };
-*/
-
-        $scope.removeAll = function () {
-            $scope.observations.remove();
-        };
 
         $scope.pageChanged = function (newPage) {
             $scope.page = newPage;

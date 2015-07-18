@@ -1,5 +1,3 @@
-//console.log('observationsListController.js');
-
 angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '$scope', '$meteor', '$state',
     'observationAddChoicesService', 'observationSuggestService',
     function ($rootScope, $scope, $meteor, $state, observationAddChoicesService, observationSuggestService) {
@@ -16,7 +14,7 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
             return Obsapp.Observations.find({});
         });
 
-        var names = observationSuggestService.getNames();
+        var names = observationSuggestService.getNamesBloodhound();
         names.initialize();
 
         $scope.addNameOptions = {

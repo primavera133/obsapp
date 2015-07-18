@@ -4,7 +4,6 @@ Meteor.publish('observations', function (options, searchString) {
         searchString = '';
     }
 
-    console.log("observations searchString:", typeof searchString);
     Obsapp.Counts.publish(this, 'numberOfObservations', Obsapp.Observations.find({
         'name': {'$regex': '.*' + searchString || '' + '.*', '$options': 'i'},
         $or: [

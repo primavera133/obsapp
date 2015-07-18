@@ -2,10 +2,6 @@ angular.module('obsapp').controller('ObservationEditController', ['$scope', '$st
     function($scope, $stateParams, $meteor, observationAddChoicesService){
         'use strict';
 
-        $scope.observations = $meteor.collection(function () {
-            return Obsapp.Observations.find({});
-        });
-
         $scope.observation = $meteor.object(Obsapp.Observations, $stateParams.obsId);
 
         $scope.sexChoices = observationAddChoicesService.sexChoices;

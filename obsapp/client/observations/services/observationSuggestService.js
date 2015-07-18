@@ -1,15 +1,12 @@
-angular.module('obsapp').factory('observationSuggestService', [function () {
+angular.module('obsapp').factory('observationSuggestService', ['$meteor', function ($meteor) {
     'use strict';
+    //TODO: Remove use of local list, use async remote
 
     var ObservationSuggestService = {};
 
+    var names = $meteor.collection(Obsapp.Names);
 
-    var localList = [
-        {en: 'Blue tit', sv: 'Blåmes', sc: 'Parus caeruleus'},
-        {en: 'Great tit', sv: 'Talgoxe', sc: 'Parus major'}
-    ];
-
-    ObservationSuggestService.getNames = function () {
+    ObservationSuggestService.getNamesBloodhound = function () {
         return new Bloodhound({
             datumTokenizer: function (d) {
                 var datumTokensEn = Bloodhound.tokenizers.whitespace(d.en);
@@ -18,7 +15,7 @@ angular.module('obsapp').factory('observationSuggestService', [function () {
                 return datumTokensEn.concat(datumTokensSv).concat(datumTokensSc);
             },
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: localList
+            local: names
         });
     };
 
