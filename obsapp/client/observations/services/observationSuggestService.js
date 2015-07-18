@@ -4,6 +4,7 @@ angular.module('obsapp').factory('observationSuggestService', ['$meteor', functi
 
     var ObservationSuggestService = {};
 
+    //relies on subscrioption being resolved in router!!!
     var names = $meteor.collection(Obsapp.Names);
 
     ObservationSuggestService.getNamesBloodhound = function () {
