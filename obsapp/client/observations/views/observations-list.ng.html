@@ -32,16 +32,10 @@
             <td class="hidden-xs">
                 {{creator(observation) | displayName }}
             </td>
-<!--
-            <td>
-                <button class="btn btn-default btn-xs" ng-click="remove(observation)"
-                        ng-show="$root.currentUser && $root.currentUser._id == observation.owner">Delete
-                </button>
-            </td>
--->
         </tr>
     </table>
 </div>
 
 <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 
+<button class="btn btn-primary btn-md pull-right" ng-click="removeAll('Clearing all personal observations. Are you sure?')">Clear all my observations</button>

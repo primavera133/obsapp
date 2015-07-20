@@ -11,7 +11,7 @@
                class="form-control"
                ng-model="observation.name"
                required
-               ng-disabled="observation.owner != $root.currentUser._id"
+               ng-disabled="!isOwner($root.currentUser)"
                am-reset-field/>
     </div>
 
@@ -22,7 +22,7 @@
                name="amount"
                class="form-control"
                ng-model="observation.amount"
-               ng-disabled="observation.owner != $root.currentUser._id">
+               ng-disabled="!isOwner($root.currentUser)">
     </div>
 
     <div class="col-xs-6 form-group">
@@ -32,7 +32,7 @@
                 class="form-control"
                 ng-options="item.label as item.label for item in sexChoices"
                 ng-model="observation.sex"
-                ng-disabled="observation.owner != $root.currentUser._id">
+                ng-disabled="!isOwner($root.currentUser)">
         </select>
     </div>
 
@@ -43,7 +43,7 @@
                 class="form-control"
                 ng-options="item.label as item.label for item in ageChoices"
                 ng-model="observation.age"
-                ng-disabled="observation.owner != $root.currentUser._id">
+                ng-disabled="!isOwner($root.currentUser)">
         </select>
     </div>
 
@@ -54,7 +54,7 @@
                 class="form-control"
                 ng-options="item.label as item.label for item in activityChoices"
                 ng-model="observation.activity"
-                ng-disabled="observation.owner != $root.currentUser._id">
+                ng-disabled="!isOwner($root.currentUser)">
         </select>
     </div>
 
@@ -68,16 +68,12 @@
                    id="observation_date_start"
                    ng-model="observation.date_start"
                    required
-                   ng-disabled="observation.owner != $root.currentUser._id"
+                   ng-disabled="!isOwner($root.currentUser)"
                     />
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default"><i class="fui-calendar"></i></button>
                 </span>
         </div>
-        <!--
-                <input id="observation_date" class="form-control" ng-model="observation.date_start"
-                       ng-disabled="observation.owner != $root.currentUser._id">
-        -->
     </div>
 
     <div class="col-xs-12 form-group">
@@ -90,21 +86,17 @@
                    id="observation_date_end"
                    ng-model="observation.date_end"
                    required
-                   ng-disabled="observation.owner != $root.currentUser._id"
+                   ng-disabled="!isOwner($root.currentUser)"
                     />
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default"><i class="fui-calendar"></i></button>
                 </span>
         </div>
-        <!--
-                <input id="observation_time" class="form-control" ng-model="observation.date_end"
-                       ng-disabled="observation.owner != $root.currentUser._id">
-        -->
     </div>
 
     <div class="col-xs-12 form-group">
         <label for="observation_unsure">Unsure observation</label>
-        <toggle-switch ng-model="observation.unsure" ng-disabled="observation.owner != $root.currentUser._id" ></toggle-switch>
+        <toggle-switch ng-model="observation.unsure" ng-disabled="!isOwner($root.currentUser)" ></toggle-switch>
     </div>
 
     <div class="col-xs-12 form-group">
@@ -113,14 +105,16 @@
               name="comment"
               class="form-control"
               ng-model="observation.comment"
-              ng-disabled="observation.owner != $root.currentUser._id"
+              ng-disabled="!isOwner($root.currentUser)"
             ></textarea>
     </div>
 
+<!--
     <div class="col-xs-12 form-group">
         <label for="observation_public">Public observation</label>
-        <toggle-switch ng-model="observation.public" ng-disabled="observation.owner != $root.currentUser._id"></toggle-switch>
+        <toggle-switch ng-model="observation.public" ng-disabled="!isOwner($root.currentUser)"></toggle-switch>
     </div>
+-->
 </div>
 
 

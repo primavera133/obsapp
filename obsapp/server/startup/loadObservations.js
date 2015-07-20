@@ -15,7 +15,8 @@ Meteor.startup(function () {
                 'date_end': moment(15, 'HH').valueOf(),
                 'unsure': false,
                 'comment': 'Stor glad höna',
-                'public': true
+                'creator': 'jqbD4qD3WHKDqsTQJ',
+                'owners': ['jqbD4qD3WHKDqsTQJ']
             },
             {
                 'name': 'Tupp',
@@ -27,7 +28,8 @@ Meteor.startup(function () {
                 'date_end': moment(15, 'HH').valueOf(),
                 'unsure': false,
                 'comment': 'Stor glad höna',
-                'public': true
+                'creator': 'jqbD4qD3WHKDqsTQJ',
+                'owners': ['jqbD4qD3WHKDqsTQJ']
             },
             {
                 'name': 'Kråka',
@@ -37,7 +39,8 @@ Meteor.startup(function () {
                 'date_start': moment('2015-07-06 10:00').valueOf(),
                 'date_end': moment('2015-07-06 10:00').valueOf(),
                 'unsure': false,
-                'public': true
+                'creator': 'jqbD4qD3WHKDqsTQJ',
+                'owners': ['jqbD4qD3WHKDqsTQJ']
             },
             {
                 'name': 'Kaja',
@@ -47,7 +50,8 @@ Meteor.startup(function () {
                 'date_start': moment('2015-07-06 10:00').valueOf(),
                 'date_end': moment('2015-07-06 10:00').valueOf(),
                 'unsure': false,
-                'public': true
+                'creator': 'jqbD4qD3WHKDqsTQJ',
+                'owners': ['jqbD4qD3WHKDqsTQJ']
             }
         ];
 

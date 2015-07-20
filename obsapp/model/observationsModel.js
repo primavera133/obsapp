@@ -1,19 +1,17 @@
 (function () {
     'use strict';
 
-    //console.log('observationsModel.js');
-
     Obsapp.Observations = new Mongo.Collection('observations');
 
     Obsapp.Observations.allow({
         insert: function (userId, observation) {
-            return userId && observation.owner === userId;
+            return userId && _.contains(observation.owners,userId);
         },
         update: function (userId, observation/*, fields, modifier*/) {
-            return userId && observation.owner === userId;
+            return userId && _.contains(observation.owners,userId);
         },
         remove: function (userId, observation) {
-            return userId && observation.owner === userId;
+            return userId && _.contains(observation.owners,userId);
         }
     });
 

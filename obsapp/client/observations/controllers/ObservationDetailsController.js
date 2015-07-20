@@ -28,5 +28,8 @@ angular.module('obsapp').controller('ObservationDetailsController', ['$scope', '
             $scope.observations.remove(observation);
         };
 
+        $scope.isOwner = function(owners, currentUser){
+          return _.contains(owners, currentUser._id);
+        };
 
     }]);

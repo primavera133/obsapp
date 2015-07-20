@@ -37,13 +37,15 @@
         Comment: {{observation.comment}}
     </div>
 </div>
+
+<!--
 <div class="row show-grid">
     <div class="col-xs-12">
         Public: <span yes-no="observation.public"></span>
     </div>
 </div>
-
-<div class="row show-grid" ng-show="observation.owner == $root.currentUser._id">
+-->
+<div class="row show-grid" ng-show="isOwner(observation.owners, $root.currentUser)">
     <div class="col-xs-12">
         <button class="btn" ng-click="edit()">EDIT</button>
     </div>

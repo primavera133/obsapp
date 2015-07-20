@@ -7,16 +7,16 @@ Meteor.publish('observations', function (options, searchString) {
     Obsapp.Counts.publish(this, 'numberOfObservations', Obsapp.Observations.find({
         'name': {'$regex': '.*' + searchString || '' + '.*', '$options': 'i'},
         $or: [
+            //{
+            //    $and: [
+            //        {'public': true},
+            //        {'public': {$exists: true}}
+            //    ]
+            //},
             {
                 $and: [
-                    {'public': true},
-                    {'public': {$exists: true}}
-                ]
-            },
-            {
-                $and: [
-                    {owner: this.userId},
-                    {owner: {$exists: true}}
+                    {owners: this.userId},
+                    {owners: {$exists: true}}
                 ]
             }
         ]
@@ -25,16 +25,16 @@ Meteor.publish('observations', function (options, searchString) {
     return Obsapp.Observations.find({
         'name': {'$regex': '.*' + searchString || '' + '.*', '$options': 'i'},
         $or: [
+            //{
+            //    $and: [
+            //        {'public': true},
+            //        {'public': {$exists: true}}
+            //    ]
+            //},
             {
                 $and: [
-                    {'public': true},
-                    {'public': {$exists: true}}
-                ]
-            },
-            {
-                $and: [
-                    {owner: this.userId},
-                    {owner: {$exists: true}}
+                    {owners: this.userId},
+                    {owners: {$exists: true}}
                 ]
             }
         ]
