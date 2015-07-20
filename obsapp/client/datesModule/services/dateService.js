@@ -6,23 +6,23 @@
         var dateService = {};
 
         dateService.getTodayAtNoon = function () {
-            return Obsapp.moment(12, 'HH');
+            return moment(12, 'HH');
         };
 
         dateService.formatDateNoTime = function (myDate) {
-            var momentDate = Obsapp.moment(myDate);
+            var momentDate = moment(myDate);
             return momentDate.format('YYYY-MM-DD');
             //return momentDate.format();
         };
 
         dateService.formatDate = function (myDate) {
-            var momentDate = Obsapp.moment(myDate);
+            var momentDate = moment(myDate);
             return momentDate.format('YYYY-MM-DD');
             //return momentDate.format();
         };
 
         dateService.formatTime = function (myDate) {
-            var momentDate = Obsapp.moment(myDate);
+            var momentDate = moment(myDate);
             return momentDate.format('HH:mm ');
             //return momentDate.format();
         };

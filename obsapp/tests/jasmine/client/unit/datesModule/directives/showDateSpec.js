@@ -6,8 +6,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-03T12:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-03T12:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -22,8 +22,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-02T12:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-02T12:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -37,8 +37,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-02T10:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-02T10:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -50,8 +50,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation" show-only-date="true"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-03T10:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-03T10:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -65,8 +65,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation" show-only-date="true"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-02T12:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-02T12:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -81,8 +81,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation" show-only-time="true"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-02T12:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-02T12:00:00+02:00').valueOf()
             }, template: template
         });
 
@@ -95,8 +95,8 @@ describe('showDateDirective', function () {
         var template = '<span show-observation-date observation="observation" short-date="true"></span>';
         var ctx = testContext({
             observation: {
-                date_start: '2015-07-02T10:00:00+02:00',
-                date_end: '2015-07-03T12:00:00+02:00'
+                date_start: moment('2015-07-02T10:00:00+02:00').valueOf(),
+                date_end: moment('2015-07-03T12:00:00+02:00').valueOf()
             }, template: template
         });
 

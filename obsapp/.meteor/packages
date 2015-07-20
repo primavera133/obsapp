@@ -25,3 +25,4 @@ angular:angular-mocks
 #velocity:html-reporter
 velocity:console-reporter
 #mizzao:autocomplete
+alethes:lodash

@@ -11,8 +11,8 @@ Meteor.startup(function () {
                 'sex': 'female',
                 'age': 'adult',
                 'activity': 'foraging for food',
-                'date_start': Obsapp.moment(10, 'HH').format('YYYY-MM-DD HH:mm'),
-                'date_end': Obsapp.moment(15, 'HH').format('YYYY-MM-DD HH:mm'),
+                'date_start': moment(10, 'HH').valueOf(),
+                'date_end': moment(15, 'HH').valueOf(),
                 'unsure': false,
                 'comment': 'Stor glad höna',
                 'public': true
@@ -23,8 +23,8 @@ Meteor.startup(function () {
                 'sex': 'male',
                 'age': 'adult',
                 'activity': 'singing',
-                'date_start': Obsapp.moment(12, 'HH').format('YYYY-MM-DD HH:mm'),
-                'date_end': Obsapp.moment(15, 'HH').format('YYYY-MM-DD HH:mm'),
+                'date_start': moment(12, 'HH').valueOf(),
+                'date_end': moment(15, 'HH').valueOf(),
                 'unsure': false,
                 'comment': 'Stor glad höna',
                 'public': true
@@ -34,8 +34,8 @@ Meteor.startup(function () {
                 'amount' : 1,
                 'sex': 'female',
                 'age': 'adult',
-                'date_start': '2015-07-06 10:00',
-                'date_end': '2015-07-06 10:00',
+                'date_start': moment('2015-07-06 10:00').valueOf(),
+                'date_end': moment('2015-07-06 10:00').valueOf(),
                 'unsure': false,
                 'public': true
             },
@@ -44,8 +44,8 @@ Meteor.startup(function () {
                 'amount' : 1,
                 'sex': 'male',
                 'age': 'adult',
-                'date_start': '2015-07-06 10:00',
-                'date_end': '2015-07-06 10:00',
+                'date_start': moment('2015-07-06 10:00').valueOf(),
+                'date_end': moment('2015-07-06 10:00').valueOf(),
                 'unsure': false,
                 'public': true
             }

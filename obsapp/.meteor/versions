@@ -7,6 +7,7 @@ accounts-password@1.1.1
 accounts-twitter@1.0.4
 accounts-ui@1.1.5
 accounts-ui-unstyled@1.1.7
+alethes:lodash@0.7.1
 angular:angular@1.4.1
 angular:angular-mocks@1.4.1
 angularui:angular-ui-router@0.2.15

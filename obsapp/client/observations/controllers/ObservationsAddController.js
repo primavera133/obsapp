@@ -29,11 +29,25 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
 
 
         $scope.add = function (newObservation) {
-            if(!$scope.addObservationForm.$valid){
+            if (!$scope.addObservationForm.$valid) {
                 return;
             }
 
             newObservation.owner = $rootScope.currentUser._id;
+
+            console.log(newObservation.name.sc);
+            if (_.isObject(newObservation.name)) {
+                if (_.isString(newObservation.name.sc)) {
+                    newObservation.name = newObservation.name.sc;
+                    console.log(newObservation.name.sc);
+                }
+            }
+            newObservation.start_date = moment(newObservation.start_date).valueOf();
+
+            console.log(newObservation.start_date, moment(newObservation.start_date).valueOf());
+
+            newObservation.end_date = moment(newObservation.end_date).valueOf();
+
             $scope.observations.push(newObservation);
             $state.go('observations');
         };
@@ -49,7 +63,7 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
         };
 
 
-         ////// DATE
+        ////// DATE
         var $datePickers = $('#dateTimePickerAddStart, #dateTimePickerAddEnd');
 
         $datePickers.datetimepicker({
@@ -57,13 +71,13 @@ angular.module('obsapp').controller('ObservationAddController', ['$rootScope', '
             showTodayButton: true,
             showClear: false,
             showClose: false,
-            icons:{
+            icons: {
                 today: 'fui-radio-checked'
             },
             stepping: 15
         });
 
-        $datePickers.on('dp.change', function(e){
+        $datePickers.on('dp.change', function (e) {
             var name = $(e.target).find('input').attr('name'),
                 value = $(e.target).find('input').val();
             //no 2-way binding for jQuery hackz, do it manually
